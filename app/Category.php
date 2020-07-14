@@ -10,6 +10,8 @@ class Category extends Model
 
     protected $fillable = ['id','name'];
 
+    public $timestamps = false;
+
     public function article(){
     	return $this->belongsTo('App\Article');
     }

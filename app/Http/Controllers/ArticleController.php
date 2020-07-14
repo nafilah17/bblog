@@ -17,19 +17,17 @@ class ArticleController extends Controller
     	return view('admin/addarticle');
     }
 
-    public function insert(Request $request){
-    	$this->validate($request, [
-    		'author_id'		=> 'required',
-    		'category_id' 	=> 'required',
-    		'title'			=> 'required',
-    		'content' 		=> 'required',
-    		'created_at' 	=> 'required',
-    		'updated_at' 	=> 'required'
-    	]);
+   public function insert(Request $request){
+        $insert = new article;
+        
+        $insert->author_id = $request->author_id;
+        $insert->category_id = $request->category_id;
+        $insert->title = $request->title;
+        $insert->content = $request->content;
+        $insert->save();
 
-    	Article::create($request->all());
+        return redirect('/article');
 
-    	return redirect('/article');
-
+    	
     }
 }

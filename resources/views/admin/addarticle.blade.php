@@ -131,7 +131,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                 <div class="form-group">
                   <label for="content">Content:</label>
-                  <textarea id="konten" class="form-control" name="konten" rows="10" cols="50">  </textarea>
+                  <textarea id="konten" class="form-control" name="content" rows="10" cols="50">  </textarea>
 
                   @if($errors->has('content'))
                   <div class="text_danger">

@@ -64,8 +64,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <div class="card-body">
               	@foreach($categories as $c)
-              <form action="/categories/update" method="post">
+              <form action="{{ route('/category/update/{id}') }}" method="post">
               {{ csrf_field() }}
+
               
                 <div class="form-group">
                   <label for="id">Id:</label>
@@ -74,6 +75,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="form-group">
                   <label for="name">Name:</label>
                   <input type="text" class="form-control" id="name" value="{{$c->name}}" name="name">
+
+                   @if($errors->has('name'))
+                                <div class="text-danger">
+                                    {{ $errors->first('name')}}
+                                </div>
+                            @endif
                 </div>
                 
                

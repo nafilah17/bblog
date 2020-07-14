@@ -95,7 +95,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <td>{{ $c->name }}</td>
                           
                           <td>
-                            <a href="/category/edit/{{ $c->id }}">Edit</a>
+                            <a href="/category/update/{{ $c->id }}">Edit</a>
 						                <a href="/category/delete/{{ $c->id }}">Delete</a>
                           </td>
                         </tr>
