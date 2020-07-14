@@ -93,7 +93,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <h5 class="m-0">Artikel</h5>
               </div>
               <div class="card-body">
-              <a href="/artikel/add"> + Add Article </a>
+              <a href="/article/add"> + Add Article </a>
                 <!-- tabel artikel here -->
                   <div class="table-responsive">
                     <table class="table table-hover">
@@ -114,7 +114,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <tr>
                           <td>{{ $a->id }}</td>
                           <td>{{ $a->author_id }}</td>
-                          <td>{{ $a->category_id }}</td>
+                          <td>{{ $a->category_id  }}</td>
                           <td>{{ $a->title }}</td>
                           <td>{{substr( $a->content,0,150) }}</td>
                           <td>{{ $a->created_at }}</td>

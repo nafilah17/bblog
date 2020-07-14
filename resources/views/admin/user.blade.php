@@ -115,7 +115,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <td>{{ $u->name }}</td>
                           <td>{{ $u->email }}</td>
                           <td>{{ $u->role }}</td>
-                          <td>{{ $u->profile }}</td>
+                          <td>{{ $u->profile_id }}</td>
                           <td>{{ $u->password }}</td>
                           
                           <td>
