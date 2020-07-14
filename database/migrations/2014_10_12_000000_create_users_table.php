@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->enum('role',['admin','author']);
-            $table->integer('profile_id')->unsigned();
+            $table->unsignedBigInteger('profile_id')->unsigned();
            
 
             $table->string('password');
