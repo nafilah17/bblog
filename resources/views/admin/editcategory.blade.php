@@ -63,30 +63,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <h5 class="m-0">Welcome!</h5>
               </div>
               <div class="card-body">
-              	@foreach($categories as $c)
-              <form action="{{ route('/category/update/{id}') }}" method="post">
+              	
+                
+              <form action="/category/update/{{ $categories->id }}" method="post">
               {{ csrf_field() }}
-
+              {{ method_field('PUT') }}
               
                 <div class="form-group">
                   <label for="id">Id:</label>
-                  <input type="text" class="form-control" id="id" value="{{$c->id}}" name="id">
+                  <input type="hidden" class="form-control" id="id" value="{{ $categories->id }}" name="id">
                 </div>
+
                 <div class="form-group">
                   <label for="name">Name:</label>
-                  <input type="text" class="form-control" id="name" value="{{$c->name}}" name="name">
+                  <input type="text" class="form-control" id="name" value="{{ $categories->name }}" name="name">
 
                    @if($errors->has('name'))
-                                <div class="text-danger">
-                                    {{ $errors->first('name')}}
-                                </div>
-                            @endif
+                    <div class="text-danger">
+                        {{ $errors->first('name')}}
+                    </div>
+                  @endif
                 </div>
                 
-               
+             
                 <button type="submit" class="btn btn-default">Simpan</button>
               </form>
-                 @endforeach
+             
               </div>
             </div>
           </div>

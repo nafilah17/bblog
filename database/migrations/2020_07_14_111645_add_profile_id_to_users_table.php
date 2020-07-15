@@ -15,7 +15,7 @@ class AddProfileIdToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
 
-            $table->foreign('profile_id')->references('id')->on('profiles');
+            $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade');
         });
     }
 

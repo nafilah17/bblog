@@ -18,28 +18,26 @@ class CategoriesController extends Controller
     }
 
     public function insert(Request $request){
-    	$insert = new category;
-    	$insert->id = $request->id;
-    	$insert->name = $request->name;
+    	$insert        = new category;
+    	$insert->id    = $request->id;
+    	$insert->name  = $request->name;
     	$insert->save();
 
     	return redirect('/category');
     }
+
     public function edit($id){
     	$categories = Category::find($id);
-    	return view('admin/category', ['categories' => $categories]);
+    	return view('admin/editcategory',['categories' => $categories]);
     }
 
-
-    public function update($id, Request $request){
-
-    	$update = App\Category::find($id);
-    	$update->id = $request->id;
-    	$update->name = $request->name;
+    public function update(Request $request, $id){
+    	$update        = Category::find($id);
+    	$update->id    = $request->id;
+    	$update->name  = $request->name;
     	$update->save();
 
     	return redirect('/category');
-
     }
 
     public function delete($id){

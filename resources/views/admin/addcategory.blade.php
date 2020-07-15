@@ -66,8 +66,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
               {{ csrf_field() }}
               
                 <div class="form-group">
-                  <label for="author">Id:</label>
-                  <input type="hidden" class="form-control" id="author" placeholder="author" name="author">
+                  <label for="id">Id:</label>
+                  <input type="text" class="form-control" id="id" placeholder="id" name="id">
                 </div>
                 <div class="form-group">
                   <label for="name">Name:</label>

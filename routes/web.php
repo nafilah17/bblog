@@ -32,8 +32,11 @@ Route::get('/category', 'CategoriesController@index');
 Route::get('/category/add', 'CategoriesController@add');
 Route::post('/category/insert', 'CategoriesController@insert');
 Route::get('/category/edit/{id}', 'CategoriesController@edit');
-Route::post('/category/update/{id}', 'CategoriesController@update');
+Route::put('/category/update/{id}', 'CategoriesController@update');
 Route::get('/category/delete/{id}', 'CategoriesController@delete');
+
+
+
 
 Route::get('/profile', 'ProfileController@index');
 
