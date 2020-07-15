@@ -61,17 +61,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <h5 class="m-0">Welcome!</h5>
               </div>
               <div class="card-body">
-                 @foreach($profil as $p)
-              <form action="/profile/update" method="post">
+               
+              <form action="/profile/update/{{ $profiles->id }}" method="post">
               {{ csrf_field() }}
+              {{ method_field('PUT') }}
               
                 <div class="form-group">
                   <label for="id">Id:</label>
-                  <input type="text" class="form-control" id="id" value="{{$p->id}}" name="id">
+                  <input type="text" class="form-control" id="id" value="{{$profiles->id}}" name="id">
                 </div>
                 <div class="form-group">
                   <label for="name">Name:</label>
-                  <input type="text" class="form-control" id="name" value="{{$p->name}}" name="name">
+                  <input type="text" class="form-control" id="name" value="{{$profiles->name}}" name="name">
                 </div>
                 <div class="form-group">
                   <label for="gender">Gender</label>
@@ -82,7 +83,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <div class="form-group">
                   <label for="birthday">Birthday:</label>
-                  <input type="datetime-local" class="form-control" id="birthday" value="{{$p->birthday}}" name="birthday">
+                  <input type="datetime-local" class="form-control" id="birthday" value="{{$profiles->birthday}}" name="birthday">
                 </div>
                 <div class="form-group">
                   <label for="created_at">Created at:</label>
@@ -95,8 +96,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                
                 <button type="submit" class="btn btn-default">Simpan</button>
-              </form>
-              @endforeach
+            
                 
               </div>
             </div>

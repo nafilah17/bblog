@@ -8,6 +8,9 @@ class Profile extends Model
 {
     protected $table = "profiles";
 
+    protected $fillable = ['id','name', 'gender', 'birthday'];
+
+
     public function user(){
     	return $this->belongsTo('App\User');
     }

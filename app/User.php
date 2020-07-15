@@ -16,8 +16,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'role', 'profile_id', 'password',
     ];
+
+
 
     /**
      * The attributes that should be hidden for arrays.
@@ -39,6 +41,9 @@ class User extends Authenticatable
 
     protected $table = "users";
 
+
+    public $timestamps = false;
+    
     public function article(){
         return $this->belongsTo('App\Article');
     }

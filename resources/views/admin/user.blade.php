@@ -93,7 +93,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <h5 class="m-0">Users</h5>
               </div>
               <div class="card-body">
-              <a href="/users/add"> + Add Users </a>
+              <a href="/user/add"> + Add Users </a>
                 <!-- tabel  here -->
                   <div class="table-responsive">
                     <table class="table table-hover">
@@ -119,8 +119,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <td>{{ $u->password }}</td>
                           
                           <td>
-                            <a href="/users/edit/{{ $u->id }}">Edit</a>
-						                <a href="/users/delete/{{ $u->id }}">Delete</a>
+                            <a href="/user/edit/{{ $u->id }}">Edit</a>
+						                <a href="/user/delete/{{ $u->id }}">Delete</a>
                           </td>
                         </tr>
                      @endforeach

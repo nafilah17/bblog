@@ -120,8 +120,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <td>{{ $a->created_at }}</td>
                           <td>{{ $a->updated_at }}</td>
                           <td>
-                            <a href="/articles/edit/{{ $a->id }}">Edit</a>
-						                <a href="/articles/delete/{{ $a->id }}">Delete</a>
+                            <a href="/article/edit/{{ $a->id }}">Edit</a>
+						                <a href="/article/delete/{{ $a->id }}">Delete</a>
                           </td>
                         </tr>
                      @endforeach

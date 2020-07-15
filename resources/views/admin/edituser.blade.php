@@ -38,12 +38,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Add Users</h1>
+            <h1 class="m-0 text-dark">Edit Users</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Add Users</li>
+              <li class="breadcrumb-item active">Edit Users</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -61,17 +61,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <h5 class="m-0">Welcome!</h5>
               </div>
               <div class="card-body">
-              <form action="/users/insert" method="post">
-              {{ csrf_field() }}
-              
                
+              <form action="/user/update/{{ $users->id }} " method="post">
+
+              {{ csrf_field() }}
+              {{ method_field('PUT') }}
+                <div class="form-group">
+                  <label for="id">Id:</label>
+                  <input type="text" class="form-control" id="id" value="{{$users->id}}" name="id">
+                </div>
                 <div class="form-group">
                   <label for="name">Name:</label>
-                  <input type="text" class="form-control" id="name" placeholder="name" name="name">
+                  <input type="text" class="form-control" id="name" value="{{$users->name}}" name="name">
                 </div>
                 <div class="form-group">
                   <label for="title">Email:</label>
-                  <input type="email" class="form-control" id="email" placeholder="email" name="email">
+                  <input type="email" class="form-control" id="email"value="{{$users->email}}" name="email">
                 </div>
                 <div class="form-group">
                   <label for="role">Role</label>
@@ -83,11 +88,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                  <div class="form-group">
                   <label for="title">Profile:</label>
-                  <input type="profile" class="form-control" id="profile" placeholder="profile" name="profile">
+                  <input type="profile_id" class="form-control" id="profile_id" value="{{$users->profile_id}}" name="profile_id">
                 </div>
                 <div class="form-group">
                   <label for="title">Password:</label>
-                  <input type="password" class="form-control" id="password" placeholder="password" name="password">
+                  <input type="password" class="form-control" id="password" value="{{$users->password}}" name="password">
                 </div>
                 
                 <button type="submit" class="btn btn-default">Simpan</button>

@@ -77,12 +77,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="form-group">
                   <label for="name">Name:</label>
                   <input type="text" class="form-control" id="name" value="{{ $categories->name }}" name="name">
-
-                   @if($errors->has('name'))
-                    <div class="text-danger">
-                        {{ $errors->first('name')}}
-                    </div>
-                  @endif
                 </div>
                 
              

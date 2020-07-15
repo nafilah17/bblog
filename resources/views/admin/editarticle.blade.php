@@ -29,27 +29,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   }
 </style>
 
-<script>
-  tinymce.init({
-    selector: '.textEditor',
-    entity_encoding: "raw",
-    forced_root_block:"",
-    force_br_newlines:false,
-    force_p_newlines:false,
-    plugins: [
-    'advlist autolink lists link charmap preview anchor',
-    'searchreplace visualblocks code fullscreen',
-    'insertdatetime media table contextmenu paste code codesample'],
-    menubar: false,
-    toolbar: 
-      'undo redo | bold italic underline strikethrough forecolor backcolor bullist numlist | blockquote subscript superscript | alignleft aligncenter alignright alignjustify | image media link | formatselect | cut copy paste selectall | table emoticons hr | removeformat | preview code | fullscreen',
-    setup: function (editor){
-      editor.on('change', function() {
-        editor.save();
-      });
-    }
-  });
-</script>
+
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -92,29 +72,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <h5 class="m-0">Welcome!</h5>
               </div>
               <div class="card-body">
-                @foreach($artikel as $a)
-              <form action="/artikel/update" method="post">
+                
+              <form action="/article/update/{{ $articles->id }}" method="post">
               {{ csrf_field() }}
-              
+              {{ method_field('PUT') }}
                 <div class="form-group">
                   <label for="id">Id:</label>
-                  <input type="text" class="form-control" id="id" value="{{$a->id}}" name="id">
+                  <input type="text" class="form-control" id="id" value="{{$articles->id}}" name="id">
                 </div>
                 <div class="form-group">
                   <label for="author">Author:</label>
-                  <input type="text" class="form-control" id="author" value="{{$a->author}}" name="author">
+                  <input type="text" class="form-control" id="author_id" value="{{$articles->author_id}}" name="author_id">
                 </div>
                 <div class="form-group">
-                  <label for="category">Category:</label>
-                  <input type="text" class="form-control" id="category" value="{{$a->category}}" name="category">
+                  <label for="category_id">Category:</label>
+                  <input type="text" class="form-control" id="category_id" value="{{$articles->category_id}}" name="category_id">
                 </div>
                 <div class="form-group">
                   <label for="title">Title:</label>
-                  <input type="text" class="form-control" id="title" value="{{$a->title}}" name="title">
+                  <input type="text" class="form-control" id="title" value="{{$articles->title}}" name="title">
                 </div>
                 <div class="form-group">
                   <label for="content">Content:</label>
-                  <textarea id="content" class="textEditor" value="{{$a->content}}" name="content" rows="10" cols="90"></textarea>
+                  <textarea id="konten" class="form-control" name="content" rows="10" cols="50" value="{{$articles->content}}">  </textarea></textarea>
                 </div>
 
                 <div class="form-group">
@@ -129,7 +109,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                
                 <button type="submit" class="btn btn-default">Simpan</button>
               </form>
-                @endforeach
+            
               </div>
             </div>
           </div>

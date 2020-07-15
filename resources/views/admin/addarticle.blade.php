@@ -29,27 +29,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   }
 </style>
 
-<script>
-  tinymce.init({
-    selector: '.textEditor',
-    entity_encoding: "raw",
-    forced_root_block:"",
-    force_br_newlines:false,
-    force_p_newlines:false,
-    plugins: [
-    'advlist autolink lists link charmap preview anchor',
-    'searchreplace visualblocks code fullscreen',
-    'insertdatetime media table contextmenu paste code codesample'],
-    menubar: false,
-    toolbar: 
-      'undo redo | bold italic underline strikethrough forecolor backcolor bullist numlist | blockquote subscript superscript | alignleft aligncenter alignright alignjustify | image media link | formatselect | cut copy paste selectall | table emoticons hr | removeformat | preview code | fullscreen',
-    setup: function (editor){
-      editor.on('change', function() {
-        editor.save();
-      });
-    }
-  });
-</script>
+
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -92,52 +72,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <h5 class="m-0">Welcome!</h5>
               </div>
               <div class="card-body">
-              <form action="/article/insert" method="post">
+              <form action="/article/insert/" method="post">
               {{ csrf_field() }}
               
                 <div class="form-group">
                   <label for="author_id">Author:</label>
-                  <input type="text" class="form-control" id="author_id" placeholder="author_id" name="author_id">
-
-                  @if($errors->has('author_id'))
-                  <div class="text_danger">
-                    {{ $errors->first('author_id')}}
-                  </div>
-                  @endif
+                  <input type="text" class="form-control" id="author_id" placeholder="author_id" name="author_id">                
                 </div>
 
                 <div class="form-group">
                   <label for="category_id">Category:</label>
                   <input type="text" class="form-control" id="category_id" placeholder="category_id" name="category_id">
-
-                  @if($errors->has('category_id'))
-                  <div class="text_danger">
-                    {{ $errors->first('category_id')}}
-                  </div>
-                  @endif
                 </div>
 
                 <div class="form-group">
                   <label for="title">Title:</label>
                   <input type="text" class="form-control" id="title" placeholder="title" name="title">
-
-                  @if($errors->has('title'))
-                  <div class="text_danger">
-                    {{ $errors->first('title')}}
-                  </div>
-                  @endif
                 </div>
 
 
                 <div class="form-group">
                   <label for="content">Content:</label>
                   <textarea id="konten" class="form-control" name="content" rows="10" cols="50">  </textarea>
-
-                  @if($errors->has('content'))
-                  <div class="text_danger">
-                    {{ $errors->first('content')}}
-                  </div>
-                  @endif
                 </div>
 
                 <div class="form-group">
