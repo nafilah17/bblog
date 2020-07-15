@@ -18,16 +18,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-  <!-- tiny -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="/assets/admin/tiny/js/tinymce/tinymce.min.js"></script>
 
-<style>
-  form {
-    width:800px;
-  }
-</style>
+
 
 
 </head>
@@ -93,7 +86,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                 <div class="form-group">
                   <label for="content">Content:</label>
-                  <textarea id="konten" class="form-control" name="content" rows="10" cols="50">  </textarea>
+                  <textarea id="content" class="form-control" name="content" rows="10" cols="50">  </textarea>
                 </div>
 
                 <div class="form-group">
@@ -131,14 +124,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- REQUIRED SCRIPTS -->
 
+<script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 
-<script type="text/javascript" src="/assets/ckeditor/ckeditor.js')}}"></script>
 <script>
-  var konten = document.getElementById("konten");
-    CKEDITOR.replace(konten,{
-    language:'en-gb'
-  });
-  CKEDITOR.config.allowedContent = true;
+  var content = document.getElementById('content');
+        CKEDITOR.replace(content,{
+        language:'en-gb'});
+        CKEDITOR.config.allowedContent = true;
+        
 </script>
 
 <!-- jQuery -->

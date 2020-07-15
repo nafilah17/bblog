@@ -45,7 +45,7 @@ class User extends Authenticatable
     public $timestamps = false;
     
     public function article(){
-        return $this->belongsTo('App\Article');
+        return $this->belongsTo('App\Article', 'author_id');
     }
 
     public function profile(){

@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/blog', 'BlogController@index');
+Route::get('/blog/detail/{id}', 'BlogController@detail');
 
 
 Route::get('/admin', 'AdminController@index');
