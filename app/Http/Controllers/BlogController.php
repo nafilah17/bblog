@@ -10,6 +10,7 @@ class BlogController extends Controller
 {
     public function index(){
     	$articles = Article::paginate(10);
+    	// dd($articles);
     	return view ('/blog', ['articles' => $articles]);
     }
 

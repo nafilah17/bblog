@@ -49,24 +49,16 @@
         <hr>
       </div>
 
-     <div class="col-md-4">
 
-       <!-- Categories Widget -->
-        
+    
 
+      </div>
 
     </div>
     <!-- /.row -->
 
   </div>
   <!-- /.container -->
-
- <!-- FOOTER -->
- @include('footer')
-
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="/assets/vendor/jquery/jquery.min.js"></script>
-  <script type="text/javascript" src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
