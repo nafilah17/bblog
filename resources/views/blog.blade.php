@@ -30,7 +30,7 @@
       <!-- Blog Entries Column -->
       <div class="col-md-8">
 
-        <h1 class="my-4">Page Heading
+        <h1 class="my-4">Blog
           
         </h1>
 
@@ -64,7 +64,7 @@
 
       </div>
 
-      @include ('sidebar');
+      @include ('sidebar')
 
       </div>
 
@@ -74,7 +74,7 @@
   </div>
   <!-- /.container -->
 
-@include ('footer');
+@include ('footer')
 
 </body>
 
