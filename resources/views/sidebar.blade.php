@@ -12,7 +12,7 @@
               <div class="col-lg-6">
                 <ul class="list-unstyled mb-0">
                   <li>
-                    <a href="#">{{ $a->category_id}}</a>
+                    <a href="#">{{ $a->category['name']}}</a>
                   </li>
                 </ul>
               </div>

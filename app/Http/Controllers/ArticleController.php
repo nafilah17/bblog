@@ -9,8 +9,9 @@ use App\Article;
 class ArticleController extends Controller
 {
    public function index(){
-     	$articles = Article::paginate(10);
-    	return view ('admin/article', ['articles' => $articles]);
+     	$articles = Article::all();
+            return view ('admin/article', ['articles' => $articles]);
+         //dd($articles);
     }
 
     public function add(){
